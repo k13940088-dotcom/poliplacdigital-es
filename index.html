@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poliplac® - Loja Oficial de Brinquedos e Utilidades</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3; /* Azul Poliplac */
+            --accent: #ff6600;  /* Laranja para alta conversão (CTA) */
+            --whatsapp: #25d366;
+            --dark: #222222;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --gray: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-contacts {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .header-cta {
+            background-color: var(--whatsapp);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .header-cta:hover {
+            background-color: #1ebc57;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #002d5e 100%);
+            color: var(--white);
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 14px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Form Card */
+        .form-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            color: var(--dark);
+        }
+
+        .form-card h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .form-card p {
+            font-size: 13px;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #e65c00;
+        }
+
+        /* Direct Contact Buttons */
+        .direct-whatsapp {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: var(--whatsapp);
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        /* Benefits */
+        .benefits {
+            padding: 60px 20px;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        .grid-3 {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h4 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Floating CTA Mobile */
+        .floating-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--whatsapp);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            z-index: 999;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 26px;
+            }
+            .floating-cta {
+                display: block;
+            }
+            body {
+                padding-bottom: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">POLIPLAC<span>®</span></a>
+            <div class="header-contacts">
+                <!-- WhatsApp Principal Extraído do Site -->
+                <a href="https://wa.me/554733822122?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20do%20Google!" class="header-cta" target="_blank">
+                    WhatsApp (47) 3382-2122
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Poliplac® - Mais de 30 Anos Fabricando Alegria</h1>
+                <p>Compre brinquedos e utilidades direto da fábrica com garantia, preço exclusivo de loja oficial e envio rápido para todo o Brasil.</p>
+                
+                <div class="hero-badges">
+                    <span class="badge">✓ Loja Oficial de Fábrica</span>
+                    <span class="badge">✓ Atendimento Seg. a Sex. (08h-17h30)</span>
+                    <span class="badge">✓ Envios para todo o Brasil</span>
+                </div>
+            </div>
+
+            <!-- Form de Vendas/Atendimento -->
+            <div class="form-card">
+                <h3>Atendimento Rápido</h3>
+                <p>Preencha para tirar dúvidas ou cotar com o SAC/Vendas:</p>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Seu WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="assunto">Assunto</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione...</option>
+                            <option value="brinquedos">Comprar Brinquedos</option>
+                            <option value="atacado">Atacado / Revenda</option>
+                            <option value="duvidas">Dúvidas sobre Pedido</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Solicitar Atendimento</button>
+                </form>
+
+                <a href="https://wa.me/5547996540191?text=Ol%C3%A1%2C%20preciso%20de%20atendimento!" class="direct-whatsapp" target="_blank">
+                    Ou chame no Celular/Whats (47) 99654-0191 →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="benefits">
+        <h2 class="section-title">Por que comprar na Poliplac®?</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h4>Direto da Fábrica</h4>
+                <p>Produtos 100% originais com garantia total de fábrica e máxima segurança para sua família.</p>
+            </div>
+            <div class="card">
+                <h4>Suporte no WhatsApp</h4>
+                <p>Atendimento rápido via WhatsApp comercial (47) 3382-2122 de segunda a sexta-feira.</p>
+            </div>
+            <div class="card">
+                <h4>Tradição de 30 Anos</h4>
+                <p>Décadas no mercado brasileiro entregando qualidade em brinquedos e produtos plásticos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating CTA Mobile -->
+    <a href="https://wa.me/554733822122?text=Ol%C3%A1%2C%20vim%20pelo%20Google!" class="floating-cta" target="_blank">
+        FALAR NO WHATSAPP (47) 3382-2122
+    </a>
+
+</body>
+</html>
