@@ -3,360 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poliplac® - Loja Oficial de Brinquedos e Utilidades</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Poliplac® - Direto da Fábrica - Ofertas Especiais e Atacado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0056b3; /* Azul Poliplac */
-            --accent: #ff6600;  /* Laranja para alta conversão (CTA) */
+            --accent: #ff0000;  /* Vermelho Urgente para Preço/CTA */
+            --highlight: #ffee00; /* Amarelo ATENÇÃO */
             --whatsapp: #25d366;
-            --dark: #222222;
-            --light: #f8f9fa;
+            --dark: #111111;
+            --light: #fefefe;
             --white: #ffffff;
-            --gray: #666666;
+            --gray: #cccccc;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--dark);
             background-color: var(--light);
-            line-height: 1.6;
+            line-height: 1.4;
         }
 
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
+        h1, h2, h3, .impact-font { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- Header de Urgência --- */
+        .top-bar {
+            background-color: var(--dark);
+            color: var(--highlight);
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 14px;
+            font-weight: 700;
         }
 
-        /* Header */
         header {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border-bottom: 3px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
         }
 
         .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto;
+            padding: 10px 20px;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--primary);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+        .logo { font-size: 32px; color: var(--primary); text-decoration: none; }
+        .logo span { color: var(--accent); }
 
-        .logo span {
-            color: var(--accent);
-        }
+        .header-right { display: flex; align-items: center; gap: 15px; }
+        .phone-link { color: var(--dark); text-decoration: none; font-weight: 700; font-size: 14px; }
 
-        .header-contacts {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .header-cta {
-            background-color: var(--whatsapp);
-            color: var(--white);
-            padding: 10px 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
-
-        .header-cta:hover {
-            background-color: #1ebc57;
-        }
-
-        /* Hero Section */
+        /* --- Hero Section Agresiva --- */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #002d5e 100%);
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1920x800/111/fff?text=FUNDO_IMAGEM_FABRICA_POLIPLAC') no-repeat center center/cover;
             color: var(--white);
-            padding: 60px 20px;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 36px;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 18px;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 14px;
-            border-radius: 5px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Form Card */
-        .form-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            color: var(--dark);
-        }
-
-        .form-card h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-            color: var(--primary);
+            padding: 40px 20px 60px;
             text-align: center;
         }
 
-        .form-card p {
-            font-size: 13px;
-            color: var(--gray);
-            text-align: center;
-            margin-bottom: 20px;
+        .hero-container { max-width: 1000px; margin: 0 auto; }
+
+        .pre-title { color: var(--highlight); font-size: 18px; font-weight: 700; display: block; margin-bottom: 5px; }
+        .hero-title { font-size: 50px; line-height: 1; margin-bottom: 15px; color: var(--white); }
+        .hero-subtitle { font-size: 20px; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+        /* --- Seção de "Oferta do Dia" ou Catálogo Rápido --- */
+        .hot-offers { padding: 50px 20px; background-color: var(--white); }
+        .section-title { text-align: center; font-size: 36px; color: var(--primary); margin-bottom: 30px; }
+        .section-title span { color: var(--accent); }
+
+        .grid-offers {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .form-group {
-            margin-bottom: 15px;
+        .product-card {
+            background: var(--light); border: 1px solid #eee; border-radius: 8px;
+            padding: 15px; text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .product-img-placeholder {
+            width: 100%; height: 200px; background-color: #f0f0f0; border-radius: 5px;
+            display: flex; align-items: center; justify-content: center;
+            color: #999; font-size: 12px; font-weight: 700; margin-bottom: 10px;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
+        .product-name { font-weight: 700; font-size: 16px; margin-bottom: 5px; color: var(--dark); }
+        .product-price-at Atacado { color: var(--accent); font-size: 22px; font-weight: 700; }
+        .product-price-at span { font-size: 14px; text-decoration: line-through; color: #777; font-weight: 400; }
 
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .btn-submit {
-            width: 100%;
-            background-color: var(--accent);
-            color: var(--white);
-            border: none;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
+        .card-cta {
+            display: inline-block; margin-top: 10px; width: 100%;
+            background-color: var(--whatsapp); color: var(--white);
+            padding: 12px; border-radius: 5px; text-decoration: none;
+            font-weight: 700; text-transform: uppercase; font-size: 14px;
             transition: background 0.3s;
         }
+        .card-cta:hover { background-color: #1ebc57; }
 
-        .btn-submit:hover {
-            background-color: #e65c00;
+        /* --- Seção Atacado/Revenda: Foco Total no Lead PJ --- */
+        .atacado-section {
+            background-color: var(--primary); color: var(--white);
+            padding: 60px 20px; text-align: center;
         }
 
-        /* Direct Contact Buttons */
-        .direct-whatsapp {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
-            color: var(--whatsapp);
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-        }
+        .atacado-container { max-width: 800px; margin: 0 auto; }
+        .atacado-title { font-size: 42px; margin-bottom: 15px; }
+        .atacado-text { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
 
-        /* Benefits */
-        .benefits {
-            padding: 60px 20px;
-            background-color: var(--white);
+        .atacado-cta {
+            display: inline-block;
+            background-color: var(--highlight); color: var(--dark);
+            padding: 18px 35px; border-radius: 50px; text-decoration: none;
+            font-weight: 700; font-size: 18px; text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255,238,0,0.4);
+            transition: transform 0.2s;
         }
+        .atacado-cta:hover { transform: scale(1.05); }
 
-        .section-title {
-            text-align: center;
-            font-size: 28px;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-
+        /* --- Prova Social/Diferenciais Negritados --- */
+        .why-us { padding: 50px 20px; background-color: var(--light); }
         .grid-3 {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
         }
-
-        .card {
-            background: var(--light);
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
+        .info-card {
+            background: var(--white); padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary);
         }
+        .info-card h4 { font-size: 18px; color: var(--primary); margin-bottom: 5px; text-transform: none;}
+        .info-card p { font-size: 14px; color: var(--gray); }
 
-        .card h4 {
-            font-size: 18px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: var(--gray);
-        }
-
-        /* Floating CTA Mobile */
+        /* --- Floating CTA Mobile --- */
         .floating-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--whatsapp);
-            color: var(--white);
-            text-align: center;
-            padding: 15px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-            z-index: 999;
+            display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--accent); color: var(--white); text-align: center;
+            padding: 16px; font-weight: 700; text-decoration: none;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3); z-index: 999;
+            text-transform: uppercase;
         }
 
         @media (max-width: 900px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-            }
-            .hero-text h1 {
-                font-size: 26px;
-            }
-            .floating-cta {
-                display: block;
-            }
-            body {
-                padding-bottom: 50px;
-            }
+            .hero-title { font-size: 32px; }
+            .floating-cta { display: block; }
+            body { padding-bottom: 60px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <div class="top-bar">🚨 ATENÇÃO: PREÇOS ESPECIAIS DE ATACADO VÁLIDOS HOJE! 🚨</div>
+
     <header>
         <div class="header-container">
             <a href="#" class="logo">POLIPLAC<span>®</span></a>
-            <div class="header-contacts">
-                <!-- WhatsApp Principal Extraído do Site -->
-                <a href="https://wa.me/554733822122?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20do%20Google!" class="header-cta" target="_blank">
-                    WhatsApp (47) 3382-2122
-                </a>
+            <div class="header-right">
+                <a href="tel:554733822122" class="phone-link">(47) 3382-2122</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-text">
-                <h1>Poliplac® - Mais de 30 Anos Fabricando Alegria</h1>
-                <p>Compre brinquedos e utilidades direto da fábrica com garantia, preço exclusivo de loja oficial e envio rápido para todo o Brasil.</p>
-                
-                <div class="hero-badges">
-                    <span class="badge">✓ Loja Oficial de Fábrica</span>
-                    <span class="badge">✓ Atendimento Seg. a Sex. (08h-17h30)</span>
-                    <span class="badge">✓ Envios para todo o Brasil</span>
-                </div>
+            <span class="pre-title">LOJA OFICIAL DA FÁBRICA</span>
+            <h1 class="hero-title">ZERE SEU ESTOQUE COM OS MELHORES BRINQUEDOS DO BRASIL!</h1>
+            <p class="hero-subtitle">Direto da Poliplac®: Preços Imbatíveis em Atacado e Varejo. Compre online ou fale com nossos consultores agora.</p>
+            <a href="#leads" class="atacado-cta">SOLICITAR TABELA DE PREÇOS</a>
+        </div>
+    </section>
+
+    <section class="hot-offers" id="ofertas">
+        <h2 class="section-title">OFERTAS EM <span>DESTAQUE</span></h2>
+        <div class="grid-offers">
+            
+            <div class="product-card">
+                <div class="product-img-placeholder">IMAGEM PRODUTO A</div>
+                <p class="product-name">Carrinho Radical Super Turbo</p>
+                <p class="product-price-at"><span>De R$ 59,90</span><br>R$ 29,90 <small>no Atacado*</small></p>
+                <a href="https://wa.me/554733822122?text=Gostaria%20de%20saber%20mais%20sobre%20o%20Carrinho%20Radical" class="card-cta" target="_blank">Consultar Valor Atacado</a>
             </div>
 
-            <!-- Form de Vendas/Atendimento -->
-            <div class="form-card">
-                <h3>Atendimento Rápido</h3>
-                <p>Preencha para tirar dúvidas ou cotar com o SAC/Vendas:</p>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Seu WhatsApp</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="assunto">Assunto</label>
-                        <select id="assunto" name="assunto" required>
-                            <option value="">Selecione...</option>
-                            <option value="brinquedos">Comprar Brinquedos</option>
-                            <option value="atacado">Atacado / Revenda</option>
-                            <option value="duvidas">Dúvidas sobre Pedido</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Solicitar Atendimento</button>
-                </form>
+            <div class="product-card">
+                <div class="product-img-placeholder">IMAGEM PRODUTO B</div>
+                <p class="product-name">Kit Praia Família Divertida</p>
+                <p class="product-price-at"><span>De R$ 120,00</span><br>R$ 75,50 <small>no Atacado*</small></p>
+                <a href="https://wa.me/554733822122?text=Tenho%20interesse%20no%20Kit%20Praia%20Fam%C3%ADlia" class="card-cta" target="_blank">Consultar Valor Atacado</a>
+            </div>
 
-                <a href="https://wa.me/5547996540191?text=Ol%C3%A1%2C%20preciso%20de%20atendimento!" class="direct-whatsapp" target="_blank">
-                    Ou chame no Celular/Whats (47) 99654-0191 →
-                </a>
+            <div class="product-card">
+                <div class="product-img-placeholder">IMAGEM PRODUTO C</div>
+                <p class="product-name">Jogo de Panelinhas Master</p>
+                <p class="product-price-at"><span>De R$ 89,00</span><br>R$ 49,90 <small>no Atacado*</small></p>
+                <a href="https://wa.me/554733822122?text=Quero%20pre%C3%A7o%20de%20atacado%20das%20Panelinhas" class="card-cta" target="_blank">Consultar Valor Atacado</a>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais -->
-    <section class="benefits">
-        <h2 class="section-title">Por que comprar na Poliplac®?</h2>
+    <section class="atacado-section" id="leads">
+        <div class="atacado-container">
+            <h2 class="atacado-title">REVENDEDOR OU LOGISTA?</h2>
+            <p class="atacado-text">Temos condições especiais de faturamento e os melhores descontos para compras em volume. Fale com nossa equipe comercial e receba nosso catálogo exclusivo.</p>
+            <a href="https://wa.me/5547996540191?text=Ol%C3%A1%2C%20tenho%20CNPJ%20e%20gostaria%20de%20receber%20a%20tabela%20de%20atacado%20da%20Poliplac" class="atacado-cta" target="_blank">RECEBER TABELA ATACADO NO ZAP</a>
+        </div>
+    </section>
+
+    <section class="why-us">
         <div class="grid-3">
-            <div class="card">
-                <h4>Direto da Fábrica</h4>
-                <p>Produtos 100% originais com garantia total de fábrica e máxima segurança para sua família.</p>
+            <div class="info-card">
+                <h4>+30 Anos de Sucesso</h4>
+                <p>Somos referência nacional na fabricação de plásticos injetados.</p>
             </div>
-            <div class="card">
-                <h4>Suporte no WhatsApp</h4>
-                <p>Atendimento rápido via WhatsApp comercial (47) 3382-2122 de segunda a sexta-feira.</p>
+            <div class="info-card">
+                <h4>Atendimento WhatsApp</h4>
+                <p>Nossos especialistas reais atendem você rapidamente das 08h às 17h30.</p>
             </div>
-            <div class="card">
-                <h4>Tradição de 30 Anos</h4>
-                <p>Décadas no mercado brasileiro entregando qualidade em brinquedos e produtos plásticos.</p>
+            <div class="info-card">
+                <h4>Faturamento PJ*</h4>
+                <p>Condições facilitadas para empresas cadastradas.</p>
             </div>
         </div>
     </section>
 
-    <!-- Floating CTA Mobile -->
-    <a href="https://wa.me/554733822122?text=Ol%C3%A1%2C%20vim%20pelo%20Google!" class="floating-cta" target="_blank">
-        FALAR NO WHATSAPP (47) 3382-2122
+    <a href="https://wa.me/554733822122?text=Ol%C3%A1%2C%20vim%20pelo%20an%C3%BAncio%20do%20Google!" class="floating-cta" target="_blank">
+        QUERO FALAR COM A FÁBRICA AGORA!
     </a>
 
 </body>
